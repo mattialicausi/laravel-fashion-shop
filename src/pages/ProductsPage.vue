@@ -1,17 +1,26 @@
 <template>
     <h2>Product Page</h2>
-
-    <div v-for="(product, index) in products" :key="index" >
-        <h2>{{ product.name }}</h2>
-        <img :src="`${store.imgBasePath}${product.image}`" alt="img of + product.name">
+    <div class="row my-5">
+        <div class="col-3" v-for="(product, index) in products" :key="index" >
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" :src="`${store.imgBasePath}${product.image}`" :alt=" 'Image of ' + product.name">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text">{{ product.description }}</p>
+                    <a href="#" class="btn btn-primary">€ {{product.prezzo}}</a>
+                </div>
+            </div>
+        </div>
     </div>
+    
+
+    
 </template>
 
 <script>
 
 import {store} from '../store';
 import axios from 'axios';
-import { DOMDirectiveTransforms } from '@vue/compiler-dom';
 
     export default {
         name: 'ProductPage',
