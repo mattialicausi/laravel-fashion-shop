@@ -1,14 +1,29 @@
 <template>
+  
+    <header>
+        <HeaderComponent/>
+    </header>
+    <h2>Ciao</h2>
+
       <main>
        <router-view></router-view>
     </main>
+
+
+  <footer>
+    <FooterComponent/>
+  </footer>
+
 </template>
 
 <script>
+import FooterComponent from './components/FooterComponent.vue';
+import HeaderComponent from './components/HeaderComponent.vue';
+
 
   export default {
-    
-  }
+    components: { HeaderComponent, FooterComponent }
+}
 </script>
 
 <style lang="scss" scoped>

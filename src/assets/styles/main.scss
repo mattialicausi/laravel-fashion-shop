@@ -1,17 +1,19 @@
 $main-font: 'Montserrat', sans-serif;
 
-@use './_variables/variables.scss' as *;
-
-$fa-font-path: '../webfonts';
+@import './variables/_variables.scss';
 @import '@fortawesome/fontawesome-free/scss/fontawesome.scss';
 @import '@fortawesome/fontawesome-free/scss/solid.scss';
+@import '@fortawesome/fontawesome-free/scss/brands.scss';
 
 @import 'bootstrap/scss/bootstrap';
 
 
-h1 {
-    color: red;
+body {
+    font-family: $main-font;
+    color: $dark;
 }
+
+
 
 
 

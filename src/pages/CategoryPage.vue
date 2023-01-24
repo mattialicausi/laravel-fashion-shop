@@ -23,7 +23,7 @@ import {store} from '../store';
 import axios from 'axios';
 
     export default {
-        name: 'ProductPage',
+        name: 'CategoryPage',
 
         data () {
             return {
@@ -51,5 +51,7 @@ import axios from 'axios';
 </script>
 
 <style lang="scss" scoped>
+@use '../assets/styles/main.scss' as *;
+
 
 </style>
