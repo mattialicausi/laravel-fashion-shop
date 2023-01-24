@@ -14,7 +14,7 @@
 @use '../assets/styles/main.scss' as *;
 
 h2 {
-    color: $gray;
+    color: $grey;
 } 
 
 </style>

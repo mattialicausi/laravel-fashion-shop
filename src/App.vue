@@ -2,7 +2,11 @@
   
     <header>
         <HeaderComponent/>
-    </header>
+        
+    </header> 
+    <div>
+      <NavBarComponent/>
+    </div>
     
 
       <main>
@@ -12,17 +16,19 @@
 
   <footer>
     <FooterComponent/>
-  </footer>
+  </footer> -->
 
 </template>
 
 <script>
 import FooterComponent from './components/FooterComponent.vue';
 import HeaderComponent from './components/HeaderComponent.vue';
+import NavBarComponent from './components/NavBarComponent.vue';
+
 
 
   export default {
-    components: { HeaderComponent, FooterComponent }
+    components: { HeaderComponent, NavBarComponent, FooterComponent }
 }
 </script>
 
