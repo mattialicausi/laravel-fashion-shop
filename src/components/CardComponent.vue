@@ -1,18 +1,23 @@
 <template>
-  <div class="my-card">
-    <img
-      :src="`${store.imgBasePath}${product.image}`"
-      class="card-img-top pb-5"
-      :alt="product.name"
-    />
-    <div class="card-body">
-      <h4 class="card-title">
-        {{ product.name }}
-      </h4>
+  <router-link
+    class="btn"
+    :to="{ name: 'single-product', params: { slug: product.slug } }"
+  >
+    <div class="my-card">
+      <img
+        :src="`${store.imgBasePath}${product.image}`"
+        class="card-img-top pb-5"
+        :alt="product.name"
+      />
+      <div class="card-body">
+        <h4 class="card-title">
+          {{ product.name }}
+        </h4>
 
-      <p class="card-text">{{ truncateText }}</p>
+        <p class="card-text">{{ truncateText }}</p>
+      </div>
     </div>
-  </div>
+  </router-link>
 </template>
 
 <script>

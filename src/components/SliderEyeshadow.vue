@@ -1,19 +1,24 @@
 <template>
   <div class="my-container">
     <section class="outer-container-cards">
-      <button class="carousel-btn left-btn" @click="scrollLft">
+      <!-- <button class="carousel-btn left-btn" @click="scrollLft">
         <i class="fa-solid fa-angle-left"></i>
-      </button>
-      <div ref="box" class="cards-container">
+      </button> -->
+      <div
+        ref="box"
+        class="cards-container"
+        @mouseover="stopAutoplay"
+        @mouseleave="autoplay"
+      >
         <div class="d-flex">
           <div class="col" v-for="(item, index) in eyeshadows" :key="index">
             <CardComponent :product="item"></CardComponent>
           </div>
         </div>
       </div>
-      <button class="carousel-btn right-btn" @click="scrollRgt">
+      <!-- <button class="carousel-btn right-btn" @click="scrollRgt">
         <i class="fa-solid fa-angle-right"></i>
-      </button>
+      </button> -->
     </section>
   </div>
 </template>
@@ -34,6 +39,7 @@ export default {
       store,
       products: [],
       eyeshadows: [],
+      autoscroll: 0,
     };
   },
   methods: {
@@ -63,9 +69,19 @@ export default {
         behavior: "smooth",
       });
     },
+    autoplay() {
+      this.autoscroll = setInterval(() => {
+        this.scrollRgt();
+      }, 2000);
+    },
+    stopAutoplay() {
+      clearInterval(this.autoscroll);
+      this.autoscroll = null;
+    },
   },
   mounted() {
     this.getEyeshadows();
+    this.autoplay();
   },
 };
 </script>

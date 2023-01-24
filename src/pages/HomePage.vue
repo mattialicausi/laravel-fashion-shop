@@ -1,36 +1,38 @@
 <template>
-  <!-- JUMBO -->
-  <div class="parallax">
-    <div class="container d-flex justify-content-end">
-      <div class="row">
-        <div class="col-6"></div>
-        <div class="col-6 jumbo-txt">Crea un look impeccabile</div>
+  <div class="wrapper">
+    <!-- JUMBO -->
+    <div class="parallax">
+      <div class="container d-flex justify-content-end">
+        <div class="row">
+          <div class="col-6"></div>
+          <div class="col-6 jumbo-txt">Per un look impeccabile</div>
+        </div>
       </div>
     </div>
+
+    <!-- SLIDER -->
+
+    <div class="my-container">
+      <h1>I Rossetti</h1>
+      <hr />
+    </div>
+
+    <SliderLipstick></SliderLipstick>
+
+    <div class="my-container">
+      <h1>Gli Ombretti</h1>
+      <hr />
+    </div>
+
+    <SliderEyeshadow></SliderEyeshadow>
+
+    <div class="my-container">
+      <h1>I Fondotinta</h1>
+      <hr />
+    </div>
+
+    <SliderFoundation></SliderFoundation>
   </div>
-
-  <!-- SLIDER -->
-
-  <div class="my-container">
-    <h1>I Rossetti</h1>
-    <hr />
-  </div>
-
-  <SliderLipstick></SliderLipstick>
-
-  <div class="my-container">
-    <h1>Gli Ombretti</h1>
-    <hr />
-  </div>
-
-  <SliderEyeshadow></SliderEyeshadow>
-
-  <div class="my-container">
-    <h1>I Fondotinta</h1>
-    <hr />
-  </div>
-
-  <SliderFoundation></SliderFoundation>
 </template>
 
 <script>
@@ -60,10 +62,10 @@ export default {
   text-align: center;
   font-family: "Aboreto", cursive;
   font-size: 5.3rem;
-  color: $white;
+  color: $mainColor;
   font-weight: 700;
   letter-spacing: 1rem;
-  margin-top: 6rem;
+  margin-top: 5rem;
 }
 
 h1 {
@@ -76,5 +78,9 @@ hr {
 .my-container {
   width: 90%;
   margin: 0 auto;
+}
+
+.wrapper {
+  padding-bottom: 6rem;
 }
 </style>
