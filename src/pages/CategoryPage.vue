@@ -1,18 +1,27 @@
 <template>
-    <h2>Product Page</h2>
-    <div class="row my-5">
-        <div class="col-3" v-for="(product, index) in products" :key="index" >
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" :src="`${store.imgBasePath}${product.image}`" :alt=" 'Image of ' + product.name">
+ 
+    <div class="container">
+
+        <h2 class="py-4">Products</h2>  
+
+        <div class="row">
+
+            <div class="col-4 my-card px-4" v-for="(product, index) in products" :key="index">
+
+                <router-link :to="{name: 'single-product', params:{slug: product.slug}}">
+                        <img class="card-img-top h-75" :src="`${store.imgBasePath}${product.image}`" :alt=" 'Image of ' + product.name">
+                </router-link>   
+               
                 <div class="card-body">
-                    <h5 class="card-title">{{ product.name }}</h5>
-                    <p class="card-text">{{ product.description }}</p>
-                    <a href="#" class="btn btn-primary">€ {{product.prezzo}}</a>
+                    <div class="card-title brand-name text-uppercase">{{ product.brand.name }}</div>
+                    <h5 class="card-title product-title">{{ product.name }}</h5>
+                    <h5 class="card-title product-price"> €{{ product.prezzo }}</h5>
                 </div>
             </div>
+
         </div>
+            
     </div>
-    
 
     
 </template>
@@ -52,6 +61,39 @@ import axios from 'axios';
 
 <style lang="scss" scoped>
 @use '../assets/styles/main.scss' as *;
+
+    .my-card {
+        padding: 0;
+
+
+        .card-img-top {
+            opacity: 1;
+            transition: 300ms ease-in-out;
+
+            &:hover {
+                opacity: 0.7;
+                transition: 300ms ease-in-out;
+            }
+        }
+
+    } 
+
+
+    .brand-name {
+        font-size: 1.2rem;
+        padding: 1rem 0 1rem 0;
+    }
+
+    .product-title {
+        font-size: 1.6rem;
+        padding-bottom: 1rem;
+    }
+
+    .product-price {
+        font-size: 1.6rem;
+        color: $alert;
+    }  
+
 
 
 </style>
