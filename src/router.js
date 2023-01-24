@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import CategoryPage from './pages/CategoryPage.vue';
 import SingleProduct from './pages/SingleProduct.vue';
 import NotFound from './pages/NotFound.vue';
+import HomePage from './pages/HomePage.vue';
 
 const router = createRouter({
     history: createWebHistory(),

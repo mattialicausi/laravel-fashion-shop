@@ -16,7 +16,7 @@
 
   <footer>
     <FooterComponent/>
-  </footer> -->
+  </footer>
 
 </template>
 
