@@ -28,7 +28,7 @@
 @use '../assets/styles/main.scss' as *;
 
 .navbr{
-    position: fixed;
+    position: sticky;
     top: 80px;
     width: 100%;
     height: 50px;
@@ -41,6 +41,8 @@
             justify-content: center;
             align-items: center;
             height: 100%;
+            min-width: 1170px;
+
             ul{
                 height: 100%;
                 margin: 0;
