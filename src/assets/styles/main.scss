@@ -1,5 +1,6 @@
 $main-font: 'Montserrat', sans-serif;
 
+$fa-font-path: '../webfonts';
 @import './variables/_variables.scss';
 @import '@fortawesome/fontawesome-free/scss/fontawesome.scss';
 @import '@fortawesome/fontawesome-free/scss/solid.scss';
@@ -7,6 +8,11 @@ $main-font: 'Montserrat', sans-serif;
 
 @import 'bootstrap/scss/bootstrap';
 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
     font-family: $main-font;
