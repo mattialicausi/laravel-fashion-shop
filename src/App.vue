@@ -2,8 +2,12 @@
   
     <header>
         <HeaderComponent/>
-    </header>
-    <h2>Ciao</h2>
+    </header> 
+    <div>
+      <NavBarComponent/>
+    </div>
+
+    <!-- <h2>Ciao</h2>
 
       <main>
        <router-view></router-view>
@@ -12,17 +16,19 @@
 
   <footer>
     <FooterComponent/>
-  </footer>
+  </footer> -->
 
 </template>
 
 <script>
 import FooterComponent from './components/FooterComponent.vue';
 import HeaderComponent from './components/HeaderComponent.vue';
+import NavBarComponent from './components/NavBarComponent.vue';
+
 
 
   export default {
-    components: { HeaderComponent, FooterComponent }
+    components: { HeaderComponent, NavBarComponent, FooterComponent }
 }
 </script>
 
