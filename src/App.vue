@@ -2,12 +2,12 @@
   
     <header>
         <HeaderComponent/>
+        
     </header> 
     <div>
       <NavBarComponent/>
     </div>
-
-    <!-- <h2>Ciao</h2>
+    
 
       <main>
        <router-view></router-view>
