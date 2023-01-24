@@ -1,5 +1,6 @@
 $main-font: 'Montserrat', sans-serif;
 
+$fa-font-path: '../webfonts';
 @import './variables/_variables.scss';
 @import '@fortawesome/fontawesome-free/scss/fontawesome.scss';
 @import '@fortawesome/fontawesome-free/scss/solid.scss';
