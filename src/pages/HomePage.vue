@@ -4,7 +4,7 @@
     <div class="container d-flex justify-content-end">
       <div class="row">
         <div class="col-6"></div>
-        <div class="col-6 jumbo-txt mt-5">Crea un look impeccabile</div>
+        <div class="col-6 jumbo-txt">Crea un look impeccabile</div>
       </div>
     </div>
   </div>
@@ -13,74 +13,34 @@
 
   <div class="my-container">
     <h1>I Rossetti</h1>
+    <hr />
   </div>
 
-  <div class="my-container">
-    <section class="outer-container-cards">
-      <button class="carousel-btn left-btn" @click="scrollLft">
-        <i class="fa-solid fa-angle-left"></i>
-      </button>
-      <div ref="box" class="cards-container">
-        <div class="d-flex">
-          <div class="col" v-for="(item, index) in products" :key="index">
-            <CardComponent :product="item"></CardComponent>
-          </div>
-        </div>
-      </div>
-      <button class="carousel-btn right-btn" @click="scrollRgt">
-        <i class="fa-solid fa-angle-right"></i>
-      </button>
-    </section>
-  </div>
+  <SliderLipstick></SliderLipstick>
 
   <div class="my-container">
-    <h1>Gli ombretti</h1>
+    <h1>Gli Ombretti</h1>
+    <hr />
   </div>
+
+  <SliderEyeshadow></SliderEyeshadow>
+
+  <div class="my-container">
+    <h1>I Fondotinta</h1>
+    <hr />
+  </div>
+
+  <SliderFoundation></SliderFoundation>
 </template>
 
 <script>
-import axios from "axios";
-import { store } from "../store";
-import CardComponent from "../components/CardComponent.vue";
+import SliderLipstick from "../components/SliderLipstick.vue";
+import SliderEyeshadow from "../components/SliderEyeshadow.vue";
+import SliderFoundation from "../components/SliderFoundation.vue";
 
 export default {
   name: "HomePage",
-  props: {
-    product: Object,
-  },
-  components: { CardComponent },
-  data() {
-    return {
-      store,
-      products: [],
-    };
-  },
-  methods: {
-    getProducts() {
-      axios.get(`${this.store.apiBaseUrl}/products`).then((res) => {
-        this.products = res.data.results;
-
-        console.log(this.products);
-      });
-    },
-    scrollLft() {
-      const element = this.$refs.box;
-      element.scrollBy({
-        left: -910,
-        behavior: "smooth",
-      });
-    },
-    scrollRgt() {
-      const element = this.$refs.box;
-      element.scrollBy({
-        left: 910,
-        behavior: "smooth",
-      });
-    },
-  },
-  mounted() {
-    this.getProducts();
-  },
+  components: { SliderLipstick, SliderEyeshadow, SliderFoundation },
 };
 </script>
 
@@ -90,7 +50,7 @@ export default {
 
 .parallax {
   background-image: url("https://img.freepik.com/fotos-premium/spiegel-mit-lidschatten-und-puderpinsel-auf-rosa-tisch_23-2148047056.jpg?w=1060");
-  height: 60vh;
+  height: 70vh;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -103,62 +63,18 @@ export default {
   color: $white;
   font-weight: 700;
   letter-spacing: 1rem;
+  margin-top: 6rem;
 }
 
 h1 {
-  padding: 8rem 0;
+  padding: 7rem 0 1rem;
 }
 
-//style slider
+hr {
+  padding-bottom: 5rem;
+}
 .my-container {
   width: 90%;
   margin: 0 auto;
-}
-
-.outer-container-cards {
-  height: 50%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow-x: auto;
-
-  .cards-container {
-    width: 100%;
-    display: flex;
-    overflow-x: auto;
-  }
-}
-
-.carousel-btn {
-  background-color: transparent;
-  height: 50px;
-  border-style: none;
-  color: $gray;
-
-  i {
-    font-size: 3rem;
-  }
-}
-
-.left-btn {
-  padding-right: 4rem;
-}
-
-.right-btn {
-  padding-left: 4rem;
-}
-
-//style scrollbar slider
-::-webkit-scrollbar {
-  height: 4px;
-}
-
-// Handle
-::-webkit-scrollbar-thumb {
-  -webkit-border-radius: 2px;
-  border-radius: 2px;
-  background: $secondaryColor;
-  width: 10%;
 }
 </style>
