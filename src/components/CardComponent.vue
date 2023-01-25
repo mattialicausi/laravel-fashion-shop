@@ -46,6 +46,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@use "../assets/styles/main.scss" as *;
 .my-card {
   width: 15rem;
   height: 30rem;
@@ -64,12 +65,12 @@ export default {
 .card-title {
   text-align: center;
   font-size: 1.5rem;
-  color: $grey;
+  color: $darkgrey;
 }
 
 .card-text {
   text-align: center;
   padding-top: 1rem;
-  color: $grey;
+  color: $darkgrey;
 }
 </style>
