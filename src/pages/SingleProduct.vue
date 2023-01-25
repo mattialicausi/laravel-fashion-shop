@@ -7,18 +7,18 @@
                     <img class="card-img-top" :src="`${store.imgBasePath}${product.image}`" :alt=" 'Image of ' + product.name">
                 </div>
                 <div class="col-6 d-flex flex-column justify-content-around">
-                <h3 class="price">€ {{ product.prezzo }}</h3>
-                <h3 class="name fw-bold">{{ product.name }}</h3>
-                <p>{{ product.description }}</p>
-                <h4>//inserire texture</h4>
-                <h4>//inserire colori</h4>
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
+                    <h3 class="price">€ {{ product.prezzo }}</h3>
+                    <h3 class="name fw-bold">{{ product.name }}</h3>
+                    <p>{{ product.description }}</p>
+                    <h4>{{ product.texture.name }}</h4>
+                    <ul class="container-colori">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
 
-                <a href="#" class="rounded-pill myBtn w-25">Add in the cart <i class="fa-solid fa-cart-shopping"></i></a>
+                    <a href="#" class="rounded-pill myBtn w-25">Add in the cart <i class="fa-solid fa-cart-shopping"></i></a>
                 </div>
             </div>
         </div>
@@ -84,18 +84,19 @@ p {
     font-size: 1.3rem;
 }
 
-ul {
+.container-colori {
 
     display: flex;
-    width: 100%;
-    height: 50px;
+    justify-content: space-between;
+    width: 50%;
     list-style: none;
+   
     
     li {
-        height: 20px;
-        widows: 20px;
+        height: 50px;
+        width: 50px;
         border-radius: 100%;
-        background-color: $mainColor;
+        background-color: $dark;
     }
 }
 

@@ -2,7 +2,7 @@
  
     <div class="container">
 
-        <h2 class="py-4">Products</h2>  
+        <h1 class="py-4">Our products</h1>  
 
         <div class="row">
 
@@ -32,35 +32,33 @@ import {store} from '../store';
 import axios from 'axios';
 
     export default {
-        name: 'CategoryPage',
-
-        data () {
-            return {
-                store,
-                products: [],
-                
-            }
-        },
-
-        methods: {
-            getProducts() {
-                axios.get(`${this.store.apiBaseUrl}/products`).then ((res) => {
-
-                    this.products = res.data.results;
-
-                    console.log(this.products);
-                });
-            }
-        },
-
-        mounted() {
-            this.getProducts();
-        },
-    }
+    name: "CategoryPage",
+    data() {
+        return {
+            store,
+            products: [],
+        };
+    },
+    methods: {
+        getProducts() {
+            axios.get(`${this.store.apiBaseUrl}/products`).then((res) => {
+                this.products = res.data.results;
+                // console.log(this.products);
+            });
+        }
+    },
+    mounted() {
+        this.getProducts();
+    },
+}
 </script>
 
 <style lang="scss" scoped>
 @use '../assets/styles/main.scss' as *;
+
+h1 {
+    font-size: 3rem;
+}
 
     .my-card {
         padding: 0;
