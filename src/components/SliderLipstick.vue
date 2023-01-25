@@ -114,7 +114,7 @@ export default {
   background-color: transparent;
   height: 50px;
   border-style: none;
-  color: $secondaryColor;
+  color: $grey;
 
   i {
     font-size: 3rem;
