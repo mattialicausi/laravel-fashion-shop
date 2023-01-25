@@ -13,8 +13,8 @@ export const store = reactive({
   //     name: "category",
   //   },
   //   {
-  //     label: "Product details",
-  //     name: "single-product",
+  //     label: "Product",
+  //     name: "Product details",
   //   },
   // ],
 });

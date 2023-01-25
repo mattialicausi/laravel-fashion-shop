@@ -44,7 +44,7 @@ import BreadCrumbComponent from "../components/BreadCrumbComponent.vue";
 
 export default {
   name: "SingleProduct",
-
+  components: { BreadCrumbComponent },
   data() {
     return {
       store,
@@ -52,9 +52,7 @@ export default {
       product: null,
     };
   },
-  components: {
-    BreadCrumbComponent,
-  },
+
   methods: {
     getProduct() {
       axios

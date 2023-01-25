@@ -7,7 +7,13 @@
   </div>
 
   <main>
-    <router-view> </router-view>
+    <!-- <BreadCrumbComponent
+        class="row align-items-center"
+        :crumbs="crumbsLinks"
+        @selected="selected"
+      /> -->
+
+    <router-view></router-view>
   </main>
 
   <footer>
@@ -19,18 +25,15 @@
 import FooterComponent from "./components/FooterComponent.vue";
 import HeaderComponent from "./components/HeaderComponent.vue";
 import NavBarComponent from "./components/NavBarComponent.vue";
+// import BreadCrumbComponent from "./components/BreadCrumbComponent.vue";
 
 export default {
   components: {
     HeaderComponent,
     NavBarComponent,
     FooterComponent,
+    // BreadCrumbComponent,
   },
-  //   methods: {
-  //     selected(crumb) {
-  //       console.log(crumb);
-  //     },
-  //   },
 };
 </script>
 

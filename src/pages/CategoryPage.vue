@@ -5,7 +5,6 @@
       :crumbs="crumbsLinks"
       @selected="selected"
     />
-
     <h1 class="py-4">Our products</h1>
 
     <div class="row">
@@ -50,9 +49,7 @@ export default {
       products: [],
     };
   },
-  components: {
-    BreadCrumbComponent,
-  },
+  components: { BreadCrumbComponent },
   methods: {
     getProducts() {
       axios.get(`${this.store.apiBaseUrl}/products`).then((res) => {
