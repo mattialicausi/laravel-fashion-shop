@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <div class="box d-flex flex-column align-items-center pt-4">
+    <div class="box d-flex flex-column align-items-center pt-5">
       <!-- form predisposto per eventuale funzione login -->
       <!-- <form action=""> -->
       <div class="form-logo mb-4">
@@ -12,21 +12,25 @@
       <div class="py-3">
         <input type="text" placeholder="Password" class="input-field" />
       </div>
-      <div class="pt-2 d-flex justify-content-start align-items-center">
-        <div>
-          <input type="checkbox" name="remember-me" id="remember-me" />
-        </div>
-        <div class="ms-2 txt-small">ricordati di me</div>
-        <div class="ms-2 txt-small">
-          <a href="#">password dimenticata?</a>
+
+      <div class="checkbox">
+        <div class="pt-2 d-flex justify-content-start align-items-center">
+          <div>
+            <input type="checkbox" name="remember-me" id="remember-me" />
+          </div>
+          <div class="ms-1 txt-small">ricordati di me</div>
+          <div class="ms-2 txt-small">
+            <a href="#">password dimenticata?</a>
+          </div>
         </div>
       </div>
+
       <div class="d-flex flex-column align-items-center pt-4">
         <button class="btn-submit" type="submit">Login</button>
       </div>
       <!-- </form> -->
       <div class="ms-2 txt-xsmall pt-3">oppure</div>
-      <div class="ms-2 txt-small pt-2">
+      <div class="ms-2 txt-small pt-3">
         <router-link :to="{ name: 'register' }"> Registrati </router-link>
       </div>
     </div>
@@ -53,12 +57,12 @@ export default {
 }
 
 .box {
-  height: 500px;
+  height: 540px;
   background-color: $white;
   width: 400px;
   margin: 0 auto;
   border-radius: 8px;
-  box-shadow: 0px 3px 4px $grey;
+  box-shadow: 0px 3px 4px grey;
 }
 
 .form-logo {
@@ -70,7 +74,7 @@ export default {
 }
 
 input {
-  width: 260px;
+  width: 280px;
   height: 40px;
   border-radius: 5px;
   border: 2px solid grey;
@@ -95,9 +99,10 @@ input {
 .btn-submit {
   background-color: rgb(249, 216, 222);
   border-color: rgb(249, 192, 202);
-  padding: 6px 14px;
+  padding: 6px 16px;
   border-radius: 5px;
   font-weight: bold;
+  box-shadow: 0px 1px 4px grey;
 
   &:hover {
     opacity: 0.9;
