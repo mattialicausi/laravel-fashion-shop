@@ -8,19 +8,9 @@
     <h1 class="py-4">Our products</h1>
 
     <div class="row">
-      <div
-        class="col-4 my-card px-4"
-        v-for="(product, index) in products"
-        :key="index"
-      >
-        <router-link
-          :to="{ name: 'single-product', params: { slug: product.slug } }"
-        >
-          <img
-            class="card-img-top h-75"
-            :src="`${store.imgBasePath}${product.image}`"
-            :alt="'Image of ' + product.name"
-          />
+      <div class="col-3 my-card px-4" v-for="(product, index) in products" :key="index">
+        <router-link :to="{ name: 'single-product', params: { slug: product.slug } }">
+          <img class="card-img-top h-75" :src="`${store.imgBasePath}${product.image}`" :alt="'Image of ' + product.name"/>
         </router-link>
 
         <div class="card-body">

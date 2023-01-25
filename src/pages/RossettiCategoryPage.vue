@@ -1,8 +1,8 @@
 <template>
     <div class="container">
         <div class="row">
-            <div class="col-3 px-4" v-for="(product, index) in categoryObject" :key="index">
-                <FilteredCategoryComponent :product="product"/>
+            <div class="col-3 px-2 p-0" v-for="(product, index) in categoryObject" :key="index">
+                <FilteredCategoryComponent class="py-5" :product="product"/>
             </div>
         </div>
     </div>
