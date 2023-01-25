@@ -3,21 +3,14 @@
     <div class="navcontent">
       <div class="container">
         <ul class="container">
-          <li>
-            <a href="">rossetti</a>
-            <!-- <div class="dropdownn">
-                            <a href="" class="lidropdownn">Brand1</a>
-                            <a href="" class="lidropdownn">Brand2</a>
-                            <a href="" class="lidropdownn">Brand3</a>
-                        </div> -->
-          </li>
-          <li><a href="">eyeshadow</a></li>
-          <li><a href="">bronzer</a></li>
-          <li><a href="">blush</a></li>
-          <li><a href="">mascara</a></li>
-          <li><a href="">fundation</a></li>
-          <li><a href="">prodotti</a></li>
-          <li><a href="">contattaci</a></li>
+          <li><router-link :to="{ name: 'rossetti-category' }">lipstick</router-link></li>
+          <li><router-link :to="{ name: 'eyeshadow-category' }">eyeshadow</router-link></li>
+          <li><router-link :to="{ name: 'bronzer-category' }">bronzer</router-link></li>
+          <li><router-link :to="{ name: 'blush-category' }">blush</router-link></li>
+          <li><router-link :to="{ name: 'mascara-category' }">mascara</router-link></li>
+          <li><router-link :to="{ name: 'fundation-category' }">fundation</router-link></li>
+          <li><a href="#">prodotti</a></li>
+          <li><a href="#">contatti</a></li>
         </ul>
       </div>
     </div>
