@@ -2,8 +2,10 @@ import { createRouter, createWebHistory } from "vue-router";
 
 import CategoryPage from "./pages/CategoryPage.vue";
 import SingleProduct from "./pages/SingleProduct.vue";
-import NotFound from "./pages/NotFound.vue";
 import HomePage from "./pages/HomePage.vue";
+import LoginPage from "./pages/LoginPage.vue";
+import RegisterPage from "./pages/RegisterPage.vue";
+import NotFound from "./pages/NotFound.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -22,6 +24,16 @@ const router = createRouter({
       path: "/product/:slug",
       name: "single-product",
       component: SingleProduct,
+    },
+    {
+      path: "/login",
+      name: "login",
+      component: LoginPage,
+    },
+    {
+      path: "/register",
+      name: "register",
+      component: RegisterPage,
     },
     {
       path: "/:pathMatch(.*)*",
