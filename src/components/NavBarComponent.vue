@@ -9,7 +9,7 @@
           <li><router-link :to="{ name: 'blush-category' }">blush</router-link></li>
           <li><router-link :to="{ name: 'mascara-category' }">mascara</router-link></li>
           <li><router-link :to="{ name: 'fundation-category' }">fundation</router-link></li>
-          <li><a href="#">prodotti</a></li>
+          <li><router-link :to="{ name: 'category' }">prodotti</router-link></li>
           <li><a href="#">contatti</a></li>
         </ul>
       </div>
