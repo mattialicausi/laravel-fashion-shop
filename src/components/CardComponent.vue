@@ -64,14 +64,12 @@ export default {
 .card-title {
   text-align: center;
   font-size: 1.5rem;
-  //da cambiare con nuova variabile
-  color: rgb(90, 89, 89);
+  color: $grey;
 }
 
 .card-text {
   text-align: center;
   padding-top: 1rem;
-  //da cambiare con nuova variabile
-  color: rgb(90, 89, 89);
+  color: $grey;
 }
 </style>
