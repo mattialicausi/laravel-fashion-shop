@@ -11,8 +11,6 @@
                     <h3 class="name fw-bold">{{ product.name }}</h3>
                     <p>{{ product.description }}</p>
                     <h4>{{ product.texture.name }}</h4>
-                    <h4>{{ product.category_id }}</h4>
-                    <h4>//inserire colori</h4>
                     <ul class="container-colori">
                         <li></li>
                         <li></li>
