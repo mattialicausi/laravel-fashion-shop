@@ -55,13 +55,13 @@ export default {
         console.log(this.lipsticks);
       });
     },
-    scrollLft() {
-      const element = this.$refs.box;
-      element.scrollBy({
-        left: -800,
-        behavior: "smooth",
-      });
-    },
+    // scrollLft() {
+    //   const element = this.$refs.box;
+    //   element.scrollBy({
+    //     left: -800,
+    //     behavior: "smooth",
+    //   });
+    // },
     scrollRgt() {
       const element = this.$refs.box;
       element.scrollBy({

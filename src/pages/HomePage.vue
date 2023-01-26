@@ -2,7 +2,7 @@
   <div class="wrapper">
     <!-- JUMBO -->
     <div class="parallax">
-      <div class="container d-flex justify-content-end">
+      <div class="container d-flex">
         <div class="row">
           <div class="col-6"></div>
           <div class="col-6 jumbo-txt">Per un look impeccabile</div>

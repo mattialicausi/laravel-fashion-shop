@@ -55,13 +55,13 @@ export default {
         console.log(this.eyeshadows);
       });
     },
-    scrollLft() {
-      const element = this.$refs.box;
-      element.scrollBy({
-        left: -800,
-        behavior: "smooth",
-      });
-    },
+    // scrollLft() {
+    //   const element = this.$refs.box;
+    //   element.scrollBy({
+    //     left: -800,
+    //     behavior: "smooth",
+    //   });
+    // },
     scrollRgt() {
       const element = this.$refs.box;
       element.scrollBy({
