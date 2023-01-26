@@ -1,6 +1,6 @@
 <template>
     <div class="container customh">
-        <h1 class="tit">I nostri Ombretti:</h1>
+        <h1 class="tit">I nostri Fondotinta:</h1>
         <div class="row">
             <div class="col-3 px-4" v-for="(product, index) in categoryObject" :key="index">
                 <FilteredCategoryComponent :product="product"/>

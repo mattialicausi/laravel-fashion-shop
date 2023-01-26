@@ -43,6 +43,7 @@ export default {
 
 
 <style lang="scss" scoped>
+
 .routeFX-enter-from{
   opacity: 0;
 }
