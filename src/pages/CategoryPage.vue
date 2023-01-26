@@ -8,19 +8,9 @@
     <h1 class="py-4">Our products</h1>
 
     <div class="row">
-      <div
-        class="col-4 my-card px-4"
-        v-for="(product, index) in products"
-        :key="index"
-      >
-        <router-link
-          :to="{ name: 'single-product', params: { slug: product.slug } }"
-        >
-          <img
-            class="card-img-top h-75"
-            :src="`${store.imgBasePath}${product.image}`"
-            :alt="'Image of ' + product.name"
-          />
+      <div class="col-3 my-card px-4" v-for="(product, index) in other" :key="index">
+        <router-link :to="{ name: 'single-product', params: { slug: product.slug } }">
+          <img class="card-img-top h-75" :src="`${store.imgBasePath}${product.image}`" :alt="'Image of ' + product.name"/>
         </router-link>
 
         <div class="card-body">
@@ -47,14 +37,28 @@ export default {
       store,
       crumbsLinks: store.crumbsLinks,
       products: [],
+      other: [],
+
     };
   },
   components: { BreadCrumbComponent },
   methods: {
+
     getProducts() {
       axios.get(`${this.store.apiBaseUrl}/products`).then((res) => {
         this.products = res.data.results;
-        // console.log(this.products);
+        console.log(this.products);
+        this.products.forEach((item) => {
+          if ((item.category_id != 1)
+          &&(item.category_id != 2)
+          &&(item.category_id != 5)
+          &&(item.category_id != 6)
+          &&(item.category_id != 8)
+          &&(item.category_id != 9)){
+            this.other.push(item);
+          }
+        });
+        console.log(this.other);
       });
     },
   },

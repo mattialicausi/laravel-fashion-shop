@@ -1,11 +1,11 @@
 <template>
   <section class="my-5" v-if="product">
     <div class="container">
-      <BreadCrumbComponent
+      <!-- <BreadCrumbComponent
         class="row align-items-center"
         :crumbs="crumbsLinks"
         @selected="selected"
-      />
+      /> -->
       <div class="row">
         <div class="col-6">
           <img
@@ -18,7 +18,7 @@
           <h3 class="price">€ {{ product.prezzo }}</h3>
           <h3 class="name fw-bold">{{ product.name }}</h3>
           <p>{{ product.description }}</p>
-          <h4>{{ product.texture.name }}</h4>
+          <!-- <h4>{{ product.texture.name }}</h4> -->
           <ul class="container-colori">
             <li></li>
             <li></li>
@@ -34,17 +34,17 @@
     </div>
   </section>
 
-  <section v-else="">//Loading circle</section>
+  <section v-else="">//Loading circle...</section>
 </template>
 
 <script>
 import axios from "axios";
 import { store } from "../store";
-import BreadCrumbComponent from "../components/BreadCrumbComponent.vue";
+// import BreadCrumbComponent from "../components/BreadCrumbComponent.vue";
 
 export default {
   name: "SingleProduct",
-  components: { BreadCrumbComponent },
+  // components: { BreadCrumbComponent },
   data() {
     return {
       store,
