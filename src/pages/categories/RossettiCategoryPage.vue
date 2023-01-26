@@ -1,8 +1,8 @@
 <template>
     <div class="container">
         <div class="row">
-            <div class="col-3 px-4" v-for="(product, index) in categoryObject" :key="index">
-                <FilteredCategoryComponent :product="product"/>
+            <div class="col-3 px-2 p-0" v-for="(product, index) in categoryObject" :key="index">
+                <FilteredCategoryComponent class="py-5" :product="product"/>
             </div>
         </div>
     </div>
@@ -11,8 +11,9 @@
 </template>
 
 <script>
-import FilteredCategoryComponent from '../components/FilteredCategoryComponent.vue';
-import {store} from '../store';
+import FilteredCategoryComponent from '../../components/FilteredCategoryComponent.vue';
+import {store} from '../../store';
+
 import axios from 'axios';
 
     export default {
@@ -36,7 +37,7 @@ import axios from 'axios';
 
                 this.allProducts.forEach((item) => {
 
-                    if (item.category_id == 6) {
+                    if (item.category_id == 8) {
                         this.categoryObject.push(item);
                     }
                 });
@@ -52,7 +53,6 @@ import axios from 'axios';
 </script>
 
 <style lang="scss" scoped>
-@use "../assets/styles/main.scss" as *;
 
 
 </style>

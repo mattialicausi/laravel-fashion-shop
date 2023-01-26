@@ -1,6 +1,5 @@
 <template>
-    <section v-if="product" class="h-75 my-5">
-
+    <section v-if="product" class="h-75 my-3">
             <router-link :to="{ name: 'single-product', params: { slug: product.slug } }">
                 <img :src="`${store.imgBasePath}${product.image}`" class="card-img-top h-75" :alt="product.name"/>
             </router-link>
@@ -12,7 +11,6 @@
                 <h5 class="card-title product-title">{{ product.name }}</h5>
                 <h5 class="card-title product-price">€{{ product.prezzo }}</h5>
             </div>
-
     </section>
    <section v-else>Out of stock</section>
 

@@ -11,8 +11,9 @@
 </template>
 
 <script>
-import FilteredCategoryComponent from '../components/FilteredCategoryComponent.vue';
-import {store} from '../store';
+import FilteredCategoryComponent from '../../components/FilteredCategoryComponent.vue';
+import {store} from '../../store';
+
 import axios from 'axios';
 
     export default {
@@ -52,7 +53,6 @@ import axios from 'axios';
 </script>
 
 <style lang="scss" scoped>
-@use "../assets/styles/main.scss" as *;
 
 
 </style>
