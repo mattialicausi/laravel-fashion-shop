@@ -1,7 +1,9 @@
 <template>
-    <section v-if="product" class="h-75 my-3">
+    <section v-if="product" class="h-75 my-3 filtered-card">
             <router-link :to="{ name: 'single-product', params: { slug: product.slug } }">
-                <img :src="`${store.imgBasePath}${product.image}`" class="card-img-top h-75" :alt="product.name"/>
+                <div class="pic-filtered">
+                  <img :src="`${store.imgBasePath}${product.image}`" class="card-img-top h-75" :alt="product.name"/>  
+                </div>
             </router-link>
             
             <div class="card-body">
@@ -71,11 +73,20 @@ h1 {
   font-size: 3rem;
 }
 
-.my-card {
+.filtered-card {
   padding: 0;
 
-  .card-img-top {
+  .pic-filtered{
+
+    height: 350px;
+    overflow: hidden;
+    &:hover img{
+      transform: scale(1.2);
+    }
+    .card-img-top {
     height: 100%;
+    width: 100%;
+    object-fit: cover;
     opacity: 1;
     transition: 300ms ease-in-out;
 
@@ -83,6 +94,7 @@ h1 {
       opacity: 0.7;
       transition: 300ms ease-in-out;
     }
+  }
   }
 }
 

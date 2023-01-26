@@ -4,11 +4,13 @@
     :to="{ name: 'single-product', params: { slug: product.slug } }"
   >
     <div class="my-card">
-      <img
-        :src="`${store.imgBasePath}${product.image}`"
-        class="card-img-top pb-5"
-        :alt="product.name"
-      />
+      <div class="card-pic">
+        <img
+          :src="`${store.imgBasePath}${product.image}`"
+          class="card-img-top pb-5"
+          :alt="product.name"
+        />
+      </div>
       <div class="card-body">
         <h4 class="card-title">
           {{ product.name }}
@@ -48,18 +50,23 @@ export default {
 <style lang="scss" scoped>
 @use "../assets/styles/main.scss" as *;
 .my-card {
-  width: 15rem;
+  width: 18rem;
   height: 30rem;
   margin: 0 1.8rem;
 }
-.card-img-top {
-  width: 100%;
-  height: 300px;
-
-  img {
-    padding-top: 20px;
-    max-width: 100%;
+.card-pic{
+  overflow: hidden;
+  height: 350px;
+  &:hover img{
+    transform: scale(1.1);
   }
+  .card-img-top {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transform: scale(.9);
+  transition: transform .5s ease;
+}
 }
 
 .card-title {

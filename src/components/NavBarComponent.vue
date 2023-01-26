@@ -28,12 +28,12 @@ export default {
 
 .navbr {
   position: sticky;
+  background-color: $mainColor;
   top: 80px;
   width: 100%;
-  height: 50px;
+  height: 80px;
   .navcontent {
     height: 50px;
-    background-color: $mainColor;
     box-shadow: 0px 4px 4px $shadow;
     .container {
       display: flex;
@@ -52,6 +52,23 @@ export default {
           list-style: none;
           position: relative;
           width: 100%;
+
+          $col: #972111;
+          $borLen: .1em;
+          $depth: 20px;
+          $modif: calc($borLen + $depth);
+
+          border: solid #0000;
+          margin-top: calc($depth / 2);
+          border-width: $borLen $borLen $modif $modif;
+          background: conic-gradient(at left $depth  bottom $depth, #0000 90deg, rgb(255 255 255 /0.3) 0 225deg,rgb(255 255 255 /0.6) 0) border-box, conic-gradient(at left $modif bottom $modif, #0000 90deg,$col 0) 0 100%/calc(100% - $borLen) calc(100% - $borLen)  border-box;
+          transform: translate(calc($depth / -1),$depth);
+          clip-path: polygon($depth 0%, $depth 0%, 100% 0%, 100% calc(100% - $depth), 100% calc(100% - $depth),20px calc(100% - $depth));
+          transition: 0.5s;
+          &:hover{
+            transform: translate(0,0);
+            clip-path: polygon(0% $depth, $depth 0%, 100% 0%, 100% calc(100% - $depth), calc(100% - $depth) 100%, 0% 100%);
+          }
           &:hover .dropdownn {
             display: block;
           }
@@ -67,7 +84,7 @@ export default {
             &:hover {
               color: $white;
               text-shadow: 0px 0px 4px $white;
-              background-color: $mainColorActive;
+              // background-color: $mainColorActive;
             }
           }
           .dropdownn {
@@ -102,5 +119,11 @@ export default {
   color: $white !important;
   text-shadow: 0px 0px 4px $white !important;
   transition: 200ms ease-in-out;
+  // $col: #972111;
+  // $borLen: .1em;
+  // $depth: 20px;
+  // $modif: calc($borLen + $depth);
+  // transform: translate(0,0);
+  // clip-path: polygon(0% $depth, $depth 0%, 100% 0%, 100% calc(100% - $depth), calc(100% - $depth) 100%, 0% 100%);
 }
 </style>

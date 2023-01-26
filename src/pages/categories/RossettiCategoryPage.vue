@@ -1,11 +1,14 @@
 <template>
-    <div class="container customh">
+    <div v-if="!loading" class="container customh">
         <h1 class="tit">I nostri Rossetti:</h1>
         <div class="row">
             <div class="col-3 px-4" v-for="(product, index) in categoryObject" :key="index">
                 <FilteredCategoryComponent :product="product"/>
             </div>
         </div>
+    </div>
+    <div v-else class="loading">
+        Loading
     </div>
    
    
@@ -28,6 +31,7 @@ import axios from 'axios';
             store,
             allProducts: [],
             categoryObject: [],
+            loading: true
         }
     },
 
@@ -43,6 +47,7 @@ import axios from 'axios';
                         this.categoryObject.push(item);
                     }
                 });
+                this.loading = false;
                 console.log(this.categoryObject);
             });
         }

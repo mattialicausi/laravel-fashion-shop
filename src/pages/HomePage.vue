@@ -1,11 +1,11 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper overflow-hidden">
     <!-- JUMBO -->
     <div class="parallax">
-      <div class="container d-flex">
-        <div class="row">
+      <div class="container d-flex h-100">
+        <div class="h-100 d-flex align-items-center">
           <div class="col-6"></div>
-          <div class="col-6 jumbo-txt">Per un look impeccabile</div>
+          <div class="col-6 jumbo-txt" v-motion :initial="{opacity: 0, x: 100}" :enter="{opacity: 1, x: 0, transition:{type: 'spring', mass: 2}}">Per un look impeccabile</div>
         </div>
       </div>
     </div>
@@ -13,25 +13,25 @@
     <!-- SLIDER -->
 
     <div class="my-container">
-      <h1>I Rossetti</h1>
+      <h1 v-motion :initial="{opacity: 0, x: 100}" :enter="{opacity: 1, x: 0, transition:{type: 'spring', mass: 2}}">I Rossetti</h1>
       <hr />
     </div>
 
-    <SliderLipstick></SliderLipstick>
+    <SliderLipstick v-motion :initial="{opacity: 0, x: 100}" :visible="{opacity: 1, x: 0, transition:{type: 'spring', mass: 2}}"></SliderLipstick>
 
     <div class="my-container">
-      <h1>Gli Ombretti</h1>
+      <h1 class="text-end" v-motion :initial="{opacity: 0, x: 100}" :visible="{opacity: 1, x: 0, transition:{type: 'spring', mass: 2}}">Gli Ombretti</h1>
       <hr />
     </div>
 
-    <SliderEyeshadow></SliderEyeshadow>
+    <SliderEyeshadow v-motion :initial="{opacity: 0, x: 100}" :visible="{opacity: 1, x: 0, transition:{type: 'spring', mass: 2}}"></SliderEyeshadow>
 
     <div class="my-container">
-      <h1>I Fondotinta</h1>
+      <h1 v-motion :initial="{opacity: 0, x: 100}" :visible="{opacity: 1, x: 0, transition:{type: 'spring', mass: 2}}">I Fondotinta</h1>
       <hr />
     </div>
 
-    <SliderFoundation></SliderFoundation>
+    <SliderFoundation v-motion :initial="{opacity: 0, x: 100}" :visible="{opacity: 1, x: 0, transition:{type: 'spring', mass: 2}}"></SliderFoundation>
 
     <div class="my-container d-flex justify-content-end pt-5">
       <router-link class="btn-discover" :to="{ name: 'category' }">
@@ -67,11 +67,11 @@ export default {
 .jumbo-txt {
   text-align: center;
   font-family: "Aboreto", cursive;
-  font-size: 5.3rem;
+  font-size: 4em;
   color: $mainColor;
   font-weight: 700;
   letter-spacing: 1rem;
-  margin-top: 5rem;
+  // margin-top: 5rem;
 }
 
 h1 {

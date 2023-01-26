@@ -46,17 +46,23 @@ export default {
 
 .routeFX-enter-from{
   opacity: 0;
+  transform: translate(100px , 0);
 }
 .routeFX-enter-to{
   opacity: 1;
+  transform: translate(0 , 0);
+
 }
 
 .routeFX-leave-from{
   opacity: 1;
+  transform: translate(0 , 0);
 }
 
 .routeFX-leave-to{
   opacity: 0;
+  transform: translate(-100px , 0);
+
 }
 
 .routeFX-leave-active, .routeFX-enter-active{
