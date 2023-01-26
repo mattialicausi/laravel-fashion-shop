@@ -1,5 +1,6 @@
 <template>
-    <div class="container">
+    <div class="container customh">
+        <h1 class="tit">I nostri Bronzer:</h1>
         <div class="row">
             <div class="col-3 px-4" v-for="(product, index) in categoryObject" :key="index">
                 <FilteredCategoryComponent :product="product"/>
@@ -12,6 +13,7 @@
 
 <script>
 import FilteredCategoryComponent from '../../components/FilteredCategoryComponent.vue';
+
 import {store} from '../../store';
 
 import axios from 'axios';

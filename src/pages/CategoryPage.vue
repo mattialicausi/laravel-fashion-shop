@@ -1,49 +1,37 @@
 <template>
-  <div class="container">
-    <BreadCrumbComponent
-      class="row align-items-center"
-      :crumbs="crumbsLinks"
-      @selected="selected"
-    />
-    <h1 class="py-4">Our products</h1>
-
-    <div class="row">
-      <div class="col-3 my-card px-4" v-for="(product, index) in other" :key="index">
-        <router-link :to="{ name: 'single-product', params: { slug: product.slug } }">
-          <img class="card-img-top h-75" :src="`${store.imgBasePath}${product.image}`" :alt="'Image of ' + product.name"/>
-        </router-link>
-
-        <div class="card-body">
-          <div class="card-title brand-name text-uppercase">
-            {{ product.brand.name }}
+  <div class="container customh">
+      <h1 class="tit">Altri Prodotti:</h1>
+      <div class="row">
+          <div class="col-3 px-4" v-for="(product, index) in other" :key="index">
+              <FilteredCategoryComponent :product="product"/>
           </div>
-          <h5 class="card-title product-title">{{ product.name }}</h5>
-          <h5 class="card-title product-price">€{{ product.prezzo }}</h5>
-        </div>
       </div>
-    </div>
   </div>
+ 
+ 
 </template>
 
 <script>
-import { store } from "../store";
-import axios from "axios";
-import BreadCrumbComponent from "../components/BreadCrumbComponent.vue";
+import FilteredCategoryComponent from '../components/FilteredCategoryComponent.vue';
 
-export default {
-  name: "CategoryPage",
-  data() {
-    return {
-      store,
-      crumbsLinks: store.crumbsLinks,
-      products: [],
-      other: [],
+import {store} from '../store';
 
-    };
+import axios from 'axios';
+
+  export default {
+  name: "RossettiCategoryPage",
+
+  components: { FilteredCategoryComponent },
+
+  data () {
+      return {
+          store,
+          products: [],
+          other: [],
+      }
   },
-  components: { BreadCrumbComponent },
-  methods: {
 
+  methods: {
     getProducts() {
       axios.get(`${this.store.apiBaseUrl}/products`).then((res) => {
         this.products = res.data.results;
@@ -63,44 +51,13 @@ export default {
     },
   },
   mounted() {
-    this.getProducts();
+      this.getProducts();
   },
-};
+
+}
 </script>
 
 <style lang="scss" scoped>
-@use "../assets/styles/main.scss" as *;
 
-h1 {
-  font-size: 3rem;
-}
 
-.my-card {
-  padding: 0;
-
-  .card-img-top {
-    opacity: 1;
-    transition: 300ms ease-in-out;
-
-    &:hover {
-      opacity: 0.7;
-      transition: 300ms ease-in-out;
-    }
-  }
-}
-
-.brand-name {
-  font-size: 1.2rem;
-  padding: 1rem 0 1rem 0;
-}
-
-.product-title {
-  font-size: 1.6rem;
-  padding-bottom: 1rem;
-}
-
-.product-price {
-  font-size: 1.6rem;
-  color: $alert;
-}
 </style>

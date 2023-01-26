@@ -3,14 +3,14 @@
     <div class="navcontent">
       <div class="container">
         <ul class="container">
-          <li><router-link :to="{ name: 'rossetti-category' }">lipstick</router-link></li>
-          <li><router-link :to="{ name: 'eyeshadow-category' }">eyeshadow</router-link></li>
-          <li><router-link :to="{ name: 'bronzer-category' }">bronzer</router-link></li>
-          <li><router-link :to="{ name: 'blush-category' }">blush</router-link></li>
-          <li><router-link :to="{ name: 'mascara-category' }">mascara</router-link></li>
-          <li><router-link :to="{ name: 'fundation-category' }">fundation</router-link></li>
-          <li><router-link :to="{ name: 'category' }">products</router-link></li>
-          <li><router-link :to="{ name: 'contatti' }">contact</router-link></li>
+          <li><router-link :to="{ name: 'rossetti-category' }" active-class="active1">rossetti</router-link></li>
+          <li><router-link :to="{ name: 'eyeshadow-category' }" active-class="active1">ombretti</router-link></li>
+          <li><router-link :to="{ name: 'bronzer-category' }" active-class="active1">bronzer</router-link></li>
+          <li><router-link :to="{ name: 'blush-category' }" active-class="active1">blush</router-link></li>
+          <li><router-link :to="{ name: 'mascara-category' }" active-class="active1">mascara</router-link></li>
+          <li><router-link :to="{ name: 'fundation-category' }" active-class="active1">fondotinta</router-link></li>
+          <li><router-link :to="{ name: 'other' }" active-class="active1">prodotti</router-link></li>
+          <li><router-link :to="{ name: 'contactus' }" active-class="active1">contatti</router-link></li>
         </ul>
       </div>
     </div>
@@ -63,7 +63,7 @@ export default {
             text-decoration: none;
             background-color: $mainColor;
             padding: 13px 22px;
-            transition: all 200ms;
+            transition: 200ms ease-in-out;
             &:hover {
               color: $white;
               text-shadow: 0px 0px 4px $white;
@@ -95,5 +95,12 @@ export default {
       }
     }
   }
+}
+
+.active1{
+  background-color: $mainColorActive !important;
+  color: $white !important;
+  text-shadow: 0px 0px 4px $white !important;
+  transition: 200ms ease-in-out;
 }
 </style>

@@ -6,15 +6,16 @@ import HomePage from "./pages/HomePage.vue";
 import LoginPage from "./pages/LoginPage.vue";
 import RegisterPage from "./pages/RegisterPage.vue";
 import NotFound from "./pages/NotFound.vue";
-import HomePage from "./pages/HomePage.vue";
-import ContactPage from "./components/ContactPage.vue";
-
+import ContactUs from "./pages/ContactUs.vue";
 import RossettiCategoryPage from "./pages/categories/RossettiCategoryPage.vue";
 import EyeshadowCategoryPage from "./pages/categories/EyeshadowCategory.vue";
 import BronzerCategoryPage from "./pages/categories/BronzerCategory.vue";
 import BlushCategoryPage from "./pages/categories/BlushCategory.vue";
 import MascaraCategoryPage from "./pages/categories/MascaraCategory.vue";
 import FundationCategoryPage from "./pages/categories/FundationCategory.vue";
+import CategoryAll from "./pages/CategoryAll.vue";
+import CartComponent from "./pages/CartComponent.vue";
+
 
 const router = createRouter({
   history: createWebHistory(),
@@ -25,9 +26,24 @@ const router = createRouter({
       component: HomePage,
     },
     {
+      path: "/login",
+      name: "login",
+      component: LoginPage,
+    },
+    {
+      path: "/register",
+      name: "register",
+      component: RegisterPage,
+    },
+    {
+      path: "/other",
+      name: "other",
+      component: CategoryPage,
+    },
+    {
       path: "/category",
       name: "category",
-      component: CategoryPage,
+      component: CategoryAll,
     },
     {
       path: "/product/:slug",
@@ -35,9 +51,14 @@ const router = createRouter({
       component: SingleProduct,
     },
     {
-      path: "/contacts",
-      name: "contatti",
-      component: ContactPage,
+      path: "/contactus",
+      name: "contactus",
+      component: ContactUs,
+    },
+    {
+      path: "/cart",
+      name: "cart",
+      component: CartComponent,
     },
 
     // percorsi per categorie in navbar

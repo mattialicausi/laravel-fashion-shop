@@ -13,7 +13,11 @@
         @selected="selected"
       /> -->
 
-    <router-view></router-view>
+      <RouterView v-slot="{Component}">
+        <Transition name="routeFX" mode="out-in">
+          <component :is="Component"></component>
+        </Transition>
+    </RouterView>
   </main>
 
   <footer>
@@ -37,4 +41,24 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+
+<style lang="scss" scoped>
+.routeFX-enter-from{
+  opacity: 0;
+}
+.routeFX-enter-to{
+  opacity: 1;
+}
+
+.routeFX-leave-from{
+  opacity: 1;
+}
+
+.routeFX-leave-to{
+  opacity: 0;
+}
+
+.routeFX-leave-active, .routeFX-enter-active{
+  transition: all 250ms;
+}
+</style>
