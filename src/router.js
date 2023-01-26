@@ -2,17 +2,19 @@ import { createRouter, createWebHistory } from "vue-router";
 
 import CategoryPage from "./pages/CategoryPage.vue";
 import SingleProduct from "./pages/SingleProduct.vue";
+import HomePage from "./pages/HomePage.vue";
+import LoginPage from "./pages/LoginPage.vue";
+import RegisterPage from "./pages/RegisterPage.vue";
 import NotFound from "./pages/NotFound.vue";
 import HomePage from "./pages/HomePage.vue";
-import ContactPage from './components/ContactPage.vue';
+import ContactPage from "./components/ContactPage.vue";
 
-
-import RossettiCategoryPage from './pages/categories/RossettiCategoryPage.vue';
-import EyeshadowCategoryPage from './pages/categories/EyeshadowCategory.vue';
-import BronzerCategoryPage from './pages/categories/BronzerCategory.vue';
-import BlushCategoryPage from './pages/categories/BlushCategory.vue';
-import MascaraCategoryPage from './pages/categories/MascaraCategory.vue';
-import FundationCategoryPage from './pages/categories/FundationCategory.vue';
+import RossettiCategoryPage from "./pages/categories/RossettiCategoryPage.vue";
+import EyeshadowCategoryPage from "./pages/categories/EyeshadowCategory.vue";
+import BronzerCategoryPage from "./pages/categories/BronzerCategory.vue";
+import BlushCategoryPage from "./pages/categories/BlushCategory.vue";
+import MascaraCategoryPage from "./pages/categories/MascaraCategory.vue";
+import FundationCategoryPage from "./pages/categories/FundationCategory.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -74,7 +76,6 @@ const router = createRouter({
       name: "fundation-category",
       component: FundationCategoryPage,
     },
-
 
     {
       path: "/:pathMatch(.*)*",

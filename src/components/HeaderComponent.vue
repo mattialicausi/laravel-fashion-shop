@@ -26,10 +26,14 @@
       <!-- link button header -->
       <ul class="buttons">
         <li>
-          <a href=""><i class="fa-solid fa-user"></i></a>
+          <router-link :to="{ name: 'login' }">
+            <i class="fa-solid fa-user"></i>
+          </router-link>
         </li>
         <li>
-          <a href=""><i class="fa-solid fa-home"></i></a>
+          <router-link :to="{ name: 'home' }">
+            <i class="fa-solid fa-home"></i>
+          </router-link>
         </li>
         <li>
           <a href=""><i class="fa-solid fa-shopping-cart"></i></a>

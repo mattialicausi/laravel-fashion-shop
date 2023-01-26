@@ -2,7 +2,7 @@
   <div class="wrapper">
     <!-- JUMBO -->
     <div class="parallax">
-      <div class="container d-flex justify-content-end">
+      <div class="container d-flex">
         <div class="row">
           <div class="col-6"></div>
           <div class="col-6 jumbo-txt">Per un look impeccabile</div>
@@ -32,6 +32,12 @@
     </div>
 
     <SliderFoundation></SliderFoundation>
+
+    <div class="my-container d-flex justify-content-end pt-5">
+      <router-link class="btn-discover" :to="{ name: 'category' }">
+        Scopri di pi&ugrave;<i class="fa-solid fa-caret-right ps-2"></i>
+      </router-link>
+    </div>
   </div>
 </template>
 
@@ -52,8 +58,8 @@ export default {
 
 .parallax {
   background-image: url("https://img.freepik.com/fotos-premium/spiegel-mit-lidschatten-und-puderpinsel-auf-rosa-tisch_23-2148047056.jpg?w=1060");
-  height: 70vh;
-  background-position: center;
+  height: 65vh;
+  background-position: top;
   background-size: cover;
   background-attachment: fixed;
 }
@@ -81,6 +87,26 @@ hr {
 }
 
 .wrapper {
-  padding-bottom: 6rem;
+  padding-bottom: 7rem;
+}
+
+.btn-discover {
+  background-color: $mainColor;
+  color: $white;
+  border-style: none;
+  padding: 10px 18px;
+  border-radius: 20px;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    color: $white;
+  }
 }
 </style>
