@@ -4,6 +4,7 @@ import CategoryPage from "./pages/CategoryPage.vue";
 import SingleProduct from "./pages/SingleProduct.vue";
 import NotFound from "./pages/NotFound.vue";
 import HomePage from "./pages/HomePage.vue";
+import ContactPage from './components/ContactPage.vue';
 
 
 import RossettiCategoryPage from './pages/categories/RossettiCategoryPage.vue';
@@ -30,6 +31,11 @@ const router = createRouter({
       path: "/product/:slug",
       name: "single-product",
       component: SingleProduct,
+    },
+    {
+      path: "/contacts",
+      name: "contatti",
+      component: ContactPage,
     },
 
     // percorsi per categorie in navbar
