@@ -1,11 +1,6 @@
 <template>
   <section class="my-5" v-if="product">
     <div class="container">
-      <!-- <BreadCrumbComponent
-        class="row align-items-center"
-        :crumbs="crumbsLinks"
-        @selected="selected"
-      /> -->
       <div class="row">
         <div class="col-6">
           <img
@@ -18,17 +13,18 @@
           <h3 class="price">€ {{ product.prezzo }}</h3>
           <h3 class="name fw-bold">{{ product.name }}</h3>
           <p>{{ product.description }}</p>
-          <!-- <h4>{{ product.texture.name }}</h4> -->
+
           <ul class="container-colori">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+
+
+            <li v-for="(color, index) in product.colors" :key="index">
+              <div class="w-100 h-100" style="background-color:{{color.hex_value}}"></div>
+            </li>
+
+
           </ul>
 
-          <a href="#" class="rounded-pill myBtn w-25"
-            >Add in the cart <i class="fa-solid fa-cart-shopping"></i
-          ></a>
+          <a href="#" class="rounded-pill btn-discover w-25">Add in the cart <i class="fa-solid fa-cart-shopping"></i></a>
         </div>
       </div>
     </div>
@@ -40,16 +36,16 @@
 <script>
 import axios from "axios";
 import { store } from "../store";
-// import BreadCrumbComponent from "../components/BreadCrumbComponent.vue";
 
 export default {
   name: "SingleProduct",
-  // components: { BreadCrumbComponent },
+
   data() {
     return {
       store,
       crumbsLinks: store.crumbsLinks,
       product: null,
+      colors: [],
     };
   },
 
@@ -66,6 +62,16 @@ export default {
           console.log(this.product);
         });
     },
+
+    // getColor() {
+    //   axios.get(`${this.store.apiBaseUrl}/products/`).then((res) => {
+    //     if(res.data.success) {
+    //       for(let i = 0; i < 5; i++) {
+    //         this.colors 
+    //       }
+    //     }
+    //   });
+    // }
   },
 
   mounted() {
@@ -100,23 +106,37 @@ p {
     height: 50px;
     width: 50px;
     border-radius: 100%;
-    background-color: $dark;
+    // background-color: $dark;
   }
 }
 
-a {
-  text-decoration: none;
+.btn-discover {
   background-color: $mainColor;
   color: $white;
-  padding: 10px;
-  transition: 300ms ease-in-out;
+  border-style: none;
+  padding: 10px 18px;
+  text-decoration: none;
+  border-radius: 20px;
 
   &:hover {
-    background-color: $white;
-    color: $mainColor;
-    transition: 300ms ease-in-out;
+    opacity: 0.9;
+    color: $white;
   }
 }
+
+// a {
+//   text-decoration: none;
+//   background-color: $mainColor;
+//   color: $white;
+//   padding: 10px;
+//   transition: 300ms ease-in-out;
+
+//   &:hover {
+//     background-color: $white;
+//     color: $mainColor;
+//     transition: 300ms ease-in-out;
+//   }
+// }
 
 img {
   height: 100%;
