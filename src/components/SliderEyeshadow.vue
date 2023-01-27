@@ -46,13 +46,13 @@ export default {
     getEyeshadows() {
       axios.get(`${this.store.apiBaseUrl}/products`).then((res) => {
         this.products = res.data.results;
-        console.log(this.products);
+        // console.log(this.products);
         this.products.forEach((item) => {
           if (item.category_id == 5) {
             this.eyeshadows.push(item);
           }
         });
-        console.log(this.eyeshadows);
+        // console.log(this.eyeshadows);
       });
     },
     // scrollLft() {
@@ -64,10 +64,12 @@ export default {
     // },
     scrollRgt() {
       const element = this.$refs.box;
-      element.scrollBy({
-        left: 800,
-        behavior: "smooth",
-      });
+      if (element != null) {
+        element.scrollBy({
+          left: 800,
+          behavior: "smooth",
+        });
+      }
     },
     autoplay() {
       this.autoscroll = setInterval(() => {
@@ -131,7 +133,7 @@ export default {
 
 //style scrollbar slider
 ::-webkit-scrollbar {
-  height: 4px;
+  height: 7px;
 }
 
 // Handle

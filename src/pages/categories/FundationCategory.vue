@@ -7,54 +7,48 @@
             </div>
         </div>
     </div>
-   
-   
+  </div>
 </template>
 
 <script>
-import FilteredCategoryComponent from '../../components/FilteredCategoryComponent.vue';
+import FilteredCategoryComponent from "../../components/FilteredCategoryComponent.vue";
 
-import {store} from '../../store';
+import { store } from "../../store";
 
-import axios from 'axios';
+import axios from "axios";
 
-    export default {
-    name: "RossettiCategoryPage",
+export default {
+  name: "RossettiCategoryPage",
 
-    components: { FilteredCategoryComponent },
+  components: { FilteredCategoryComponent },
 
-    data () {
-        return {
-            store,
-            allProducts: [],
-            categoryObject: [],
-        }
+  data() {
+    return {
+      store,
+      allProducts: [],
+      categoryObject: [],
+    };
+  },
+
+  methods: {
+    getAllProducts() {
+      axios.get(`${this.store.apiBaseUrl}/products`).then((res) => {
+        this.allProducts = res.data.results;
+        console.log(this.allProducts);
+
+        this.allProducts.forEach((item) => {
+          if (item.category_id == 6) {
+            this.categoryObject.push(item);
+          }
+        });
+        console.log(this.categoryObject);
+      });
     },
-
-    methods: {
-        getAllProducts() {
-            axios.get(`${this.store.apiBaseUrl}/products`).then ((res) => {
-                this.allProducts = res.data.results;
-                console.log(this.allProducts);
-
-                this.allProducts.forEach((item) => {
-
-                    if (item.category_id == 6) {
-                        this.categoryObject.push(item);
-                    }
-                });
-                console.log(this.categoryObject);
-            });
-        }
-    },
-    mounted() {
-        this.getAllProducts();
-    },
-
-}
+  },
+  mounted() {
+    this.getAllProducts();
+  },
+};
 </script>
 
-<style lang="scss" scoped>
-
-
-</style>
+<style lang="scss" scoped></style>
