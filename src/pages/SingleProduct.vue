@@ -1,6 +1,6 @@
 <template>
   <section class="my-5" v-if="product">
-    <div class="container">
+    <div class="container customh">
       <!-- <BreadCrumbComponent
         class="row align-items-center"
         :crumbs="crumbsLinks"
