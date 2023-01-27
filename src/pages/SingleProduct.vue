@@ -1,5 +1,5 @@
 <template>
-  <section class="my-5" v-if="product">
+  <section class="my-section" v-if="product">
     <div class="container">
       <div class="row">
         <div class="col-6">
@@ -14,17 +14,13 @@
           <h3 class="name fw-bold">{{ product.name }}</h3>
           <p>{{ product.description }}</p>
 
-          <ul class="container-colori">
-
-
+          <ul class="container-colori gx-3">
             <li v-for="(color, index) in product.colors" :key="index">
-              <div class="w-100 h-100" style="background-color:{{color.hex_value}}"></div>
+              <div class="w-100 h-100 colore" :style="{backgroundColor: color.hex_value}"></div>
             </li>
-
-
           </ul>
 
-          <a href="#" class="rounded-pill btn-discover w-25">Add in the cart <i class="fa-solid fa-cart-shopping"></i></a>
+          <a href="#" class="rounded-pill btn-discover align-self-center">Acquista <i class="fa-solid fa-cart-shopping"></i></a>
         </div>
       </div>
     </div>
@@ -63,15 +59,6 @@ export default {
         });
     },
 
-    // getColor() {
-    //   axios.get(`${this.store.apiBaseUrl}/products/`).then((res) => {
-    //     if(res.data.success) {
-    //       for(let i = 0; i < 5; i++) {
-    //         this.colors 
-    //       }
-    //     }
-    //   });
-    // }
   },
 
   mounted() {
@@ -82,6 +69,11 @@ export default {
 
 <style lang="scss" scoped>
 @use "../assets/styles/main.scss" as *;
+
+.my-section {
+  min-height: calc(100vh - (260px));
+  padding-top: 50px;
+}
 
 .price {
   font-size: 3rem;
@@ -99,18 +91,23 @@ p {
 .container-colori {
   display: flex;
   justify-content: space-between;
-  width: 50%;
+  width: 100%;
   list-style: none;
 
   li {
     height: 50px;
     width: 50px;
     border-radius: 100%;
-    // background-color: $dark;
+    overflow: hidden;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
 
 .btn-discover {
+
   background-color: $mainColor;
   color: $white;
   border-style: none;
@@ -123,20 +120,6 @@ p {
     color: $white;
   }
 }
-
-// a {
-//   text-decoration: none;
-//   background-color: $mainColor;
-//   color: $white;
-//   padding: 10px;
-//   transition: 300ms ease-in-out;
-
-//   &:hover {
-//     background-color: $white;
-//     color: $mainColor;
-//     transition: 300ms ease-in-out;
-//   }
-// }
 
 img {
   height: 100%;
