@@ -48,7 +48,7 @@
                       </div>
                       <div class="row justify-content-center">
                           <div class="col-md-5 form-group text-center">
-                            <input class="sbmt mine" type="submit" value="Send" />
+                            <input class="sbmt mine" type="submit" value="Invia" />
                           </div>
                       </div>
                   </form>

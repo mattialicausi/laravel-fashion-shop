@@ -89,6 +89,7 @@ h1 {
     object-fit: cover;
     opacity: 1;
     transition: 300ms ease-in-out;
+    clip-path: polygon(1% 0, 99% 0, 99% 100%, 1% 100%);
 
     &:hover {
       opacity: 0.7;

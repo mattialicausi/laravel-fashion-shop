@@ -1,5 +1,5 @@
 <template>
-  <div class="container customh">
+  <div v-if="!loading" class="container customh">
     <h1 class="tit">I nostri Mascara:</h1>
     <div class="row">
       <div class="col-3 px-4" v-for="(product, index) in categoryObject" :key="index">
@@ -7,6 +7,20 @@
       </div>
     </div>
   </div>
+  <div v-else class="loading d-flex justify-content-center align-items-center">
+        <div class="squaresLoader">
+            <div class="squaresLoaderInner">
+                <div>
+                    <div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -26,6 +40,7 @@ export default {
       store,
       allProducts: [],
       categoryObject: [],
+      loading: true
     };
   },
 
@@ -41,6 +56,7 @@ export default {
           }
         });
         console.log(this.categoryObject);
+        this.loading = false;
       });
     },
   },
