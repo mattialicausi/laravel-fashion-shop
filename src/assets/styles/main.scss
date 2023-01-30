@@ -122,5 +122,13 @@ body {
   100% { background: #e15b64 }
 }
 
+// truncate text
+.truncate {
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 
 

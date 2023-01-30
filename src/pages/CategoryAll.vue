@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container customh">
     <BreadCrumbComponent
       class="row align-items-center"
       :crumbs="crumbsLinks"
@@ -17,7 +17,7 @@
           <div class="card-title brand-name text-uppercase">
             {{ product.brand.name }}
           </div>
-          <h5 class="card-title product-title">{{ product.name }}</h5>
+          <h5 class="card-title product-title truncate">{{ product.name }}</h5>
           <h5 class="card-title product-price">€{{ product.prezzo }}</h5>
         </div>
       </div>
@@ -37,7 +37,8 @@ export default {
       store,
       crumbsLinks: store.crumbsLinks,
       products: [],
-      products: [],
+      // textMaxLen: 20,
+      // products: [],
 
     };
   },
@@ -50,6 +51,16 @@ export default {
       });
     },
   },
+
+  // computed: {
+  //           truncateText() {
+  //               if (this.product.name.length > this.textMaxLen) {
+  //                   return this.product.name.substr(0, this.textMaxLen) + "...";
+  //               }
+  //               return this.product.name;
+  //           },
+  //       },
+
   mounted() {
     this.getProducts();
   },
@@ -64,7 +75,7 @@ h1 {
 }
 
 .my-card {
-  padding: 0;
+  padding: 35px;
 
   .card-img-top {
     opacity: 1;
@@ -90,5 +101,9 @@ h1 {
 .product-price {
   font-size: 1.6rem;
   color: $alert;
+}
+
+.my-my {
+  margin-bottom: 3.5rem;
 }
 </style>

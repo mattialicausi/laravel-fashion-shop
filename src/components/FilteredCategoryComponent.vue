@@ -10,7 +10,7 @@
                 <div class="card-title brand-name text-uppercase">
                     {{ product.brand.name }}
                 </div>
-                <h5 class="card-title product-title">{{ product.name }}</h5>
+                <h5 class="card-title product-title truncate">{{ product.name }}</h5>
                 <h5 class="card-title product-price">€{{ product.prezzo }}</h5>
             </div>
     </section>
