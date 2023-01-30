@@ -1,66 +1,63 @@
 <template>
   <section class="customh">
-      <div class="row align-items-stretch justify-content-center no-gutters">
-          <div class="col-md-7">
-              <div class="form h-100 contact-wrap p-5">
+    <div class="row align-items-stretch justify-content-center g-0">
+      <div class="col-md-7">
+        <div class="form h-100 contact-wrap p-5">
 
-                  <div v-if="success == true" class="alert alert-success" role="alert">
-                      Messaggio inviato con successo
-                  </div>
+          <div v-if="success == true" class="alert alert-success" role="alert">
+            Messaggio inviato con successo
+          </div>
 
-                  <div v-if="success == false" class="alert alert-danger" role="alert">
-                    Errore messaggio non inviato!
-                  </div>
+          <div v-if="success == false" class="alert alert-danger" role="alert">
+            Errore messaggio non inviato!
+          </div>
 
-                  <h3 class="text-center titl">Contattaci per qualsiasi informazione..</h3>
-                  <!-- <div v-if="success" class="alert alert-success text-start" role="alert">
+          <h3 class="text-center titl">Contattaci per qualsiasi informazione..</h3>
+          <!-- <div v-if="success" class="alert alert-success text-start" role="alert">
                       Messaggio inviato con successo!
                   </div> -->
-                  <form class=" frm" ref="form" @submit.prevent="sendEmail">
-                      <div class="row">
-                          <div class="col-md-6 form-group mb-3">
-                              <label for="" class="col-form-label">Nome *</label>
-                              <input class="border-0 border-bottom form-control" type="text" name="name" id="name"
-                                  placeholder="Nome"  required>
-                              <!-- <p v-for="(error, index) in errors.name" :key="index" class="invalid-feedback">
+          <form class=" frm" ref="form" @submit.prevent="sendEmail">
+            <div class="row">
+              <div class="col-md-6 form-group mb-3">
+                <label for="" class="col-form-label">Nome *</label>
+                <input class="border-0 border-bottom form-control" type="text" name="name" id="name" placeholder="Nome"
+                  required>
+                <!-- <p v-for="(error, index) in errors.name" :key="index" class="invalid-feedback">
                                   {{ error }}
                               </p> -->
-                          </div>
-                          <div class="col-md-6 form-group mb-3">
-                              <label for="" class="col-form-label">Email *</label>
-                              <input type="email" class="form-control" name="email" id="email"
-                                  placeholder="La tua Email" 
-                                  required>
-                              <!-- <p v-for="(error, index) in errors.email" :key="index" class="invalid-feedback">
-                                  {{ error }}
-                              </p> -->
-                          </div>
-                      </div>
-
-
-                      <div class="row mb-5">
-                          <div class="col-md-12 form-group mb-3">
-                              <label for="message" class="col-form-label">Messaggio *</label>
-                              <textarea class="form-control textare" name="message" id="message" cols="30" rows="10"
-                                  placeholder="Scrivi il tuo Messaggio"
-                                   required></textarea>
-                          </div>
-                      </div>
-                      <div class="row justify-content-center">
-                          <div class="col-md-5 form-group text-center">
-                            <input class="sbmt mine" type="submit" value="Invia" />
-                          </div>
-                      </div>
-                  </form>
-
-                  <div id="form-message-warning mt-4"></div>
-                  <div id="form-message-success">
-                      Your message was sent, thank you!
-                  </div>
-
               </div>
+              <div class="col-md-6 form-group mb-3">
+                <label for="" class="col-form-label">Email *</label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="La tua Email" required>
+                <!-- <p v-for="(error, index) in errors.email" :key="index" class="invalid-feedback">
+                                  {{ error }}
+                              </p> -->
+              </div>
+            </div>
+
+
+            <div class="row mb-5">
+              <div class="col-md-12 form-group mb-3">
+                <label for="message" class="col-form-label">Messaggio *</label>
+                <textarea class="form-control textare" name="message" id="message" cols="30" rows="10"
+                  placeholder="Scrivi il tuo Messaggio" required></textarea>
+              </div>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col-md-5 form-group text-center">
+                <input class="sbmt mine" type="submit" value="Invia" />
+              </div>
+            </div>
+          </form>
+
+          <div id="form-message-warning mt-4"></div>
+          <div id="form-message-success">
+            Your message was sent, thank you!
           </div>
+
+        </div>
       </div>
+    </div>
   </section>
 
 </template>
@@ -70,9 +67,9 @@ import emailjs from "@emailjs/browser";
 export default {
   name: 'ContactUs',
   data() {
-      return {
-          success: null,
-      }
+    return {
+      success: null,
+    }
   },
   methods: {
     sendEmail() {
@@ -112,7 +109,7 @@ body {
   position: relative;
 }
 
-.textare{
+.textare {
   height: auto;
 }
 
@@ -279,7 +276,7 @@ a:hover {
 
 @media (max-width: 1199.98px) {
   .contact-wrap .contact-info {
-      height: 400px !important;
+    height: 400px !important;
   }
 }
 
@@ -323,11 +320,11 @@ label.error {
   color: #000;
 }
 
-.titl{
+.titl {
   margin-bottom: 80px;
 }
 
-.mine{
+.mine {
   background-color: rgb(249, 216, 222);
   border-color: rgb(249, 192, 202);
   padding: 8px 30px;
